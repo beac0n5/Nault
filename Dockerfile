@@ -10,6 +10,6 @@ COPY . .
 RUN npm run wallet:build
 
 # build the nginx hosting container
-FROM nginx:1.21-alpine
+FROM nginx:1.25.4-alpine
 COPY .docker/nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /usr/src/app/dist /usr/share/nginx/html
